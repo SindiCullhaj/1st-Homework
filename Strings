@@ -1,0 +1,58 @@
+#Whats your name
+#
+# Complete the 'print_full_name' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts following parameters:
+#  1. STRING first
+#  2. STRING last
+#
+
+def print_full_name(a, b):
+
+    b = b+"!"
+    print("Hello",a, b,"You just delved into python.");
+
+#MUTATIONS
+def mutate_string(string, position, character):
+  
+    pos = position+1
+    Output = string[:position]+character+string[pos:]
+    return Output
+
+    
+    
+if __name__ == '__main__':
+
+#FIND A STRING
+def count_substring(string, sub_string):
+    count = 0
+    for i in range(len(string)-len(sub_string)+1):
+        if (string[i:i+len(sub_string)] == sub_string):
+            count += 1
+    return count
+
+
+
+if __name__ == '__main__':
+
+
+
+#THE MINION GAME
+def minion_game(string):
+    s=len(string)
+    vowel = 0
+    consonant = 0
+     
+    for i in range(s):
+        if string[i] in 'AEIOU':
+           vowel+=(s-i)
+        else:
+           consonant+=(s-i)
+                
+    if vowel < consonant:
+        print('Stuart ' + str(consonant))
+    elif vowel > consonant:
+        print('Kevin ' + str(vowel))
+    else:
+        print('Draw')
