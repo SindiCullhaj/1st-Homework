@@ -1,0 +1,44 @@
+#itertools permutations
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import permutations
+
+s,k = input().split()
+
+words = list(permutations(s,int(k)))
+words = sorted(words, reverse=False)
+for word in words:
+    print(*word,sep='')
+    
+    
+#itertools combinations
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations
+
+io = input().split()
+S = io[0]
+k = int(io[1])
+for i in range(1,k+1):
+    for j in combinations(sorted(S),i):
+        print("".join(j))
+
+
+#itertools combinations with replacment
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations_with_replacement
+
+st,n= map(str,input().split())
+n=int(n)
+m= combinations_with_replacement(sorted(st),n)
+for i in m:
+    print("".join(i))
+    
+    
+    
+#Compress the string
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import *
+
+io = input()
+for i,j in groupby(map(int,list(io))):
+    print(tuple([len(list(j)), i]) ,end = " ")
+
