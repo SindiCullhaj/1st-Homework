@@ -1,0 +1,69 @@
+#CHECK SUBSETS
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+T = int(input())
+
+for _ in range(T):
+    a = input()
+    A = set(input().split())
+    b = int(input())
+    B = set(input().split())
+    print(A.issubset(B))
+
+
+#Symmetric difference
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+M = int(input())
+mset = set(map(int, input().split()))
+N = int(input())
+nset = set(map(int, input().split()))
+
+mdef = mset.difference(nset)
+ndef = nset.difference(mset)
+
+output = mdef.union(ndef)
+
+for i in sorted(list(output)):
+    print(i)
+    
+    
+    
+#The Captain's Room
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+N = int(input())
+
+storage = map(int, input().split())
+storage = sorted(storage)
+
+for i in range(len(storage)):
+    if(i != len(storage)-1):
+        if(storage[i]!=storage[i-1] and storage[i]!=storage[i+1]):
+            print(storage[i])
+            break;
+    else:
+        print(storage[i])
+        
+        
+        
+        
+        
+#No idea
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+io = input().split()
+m = int(io[0])
+n = int(io[1])
+
+storage = list()
+count = 0
+
+storage = list(map(int, input().strip().split()))
+
+A = set(map(int, input().strip().split()))
+B = set(map(int, input().strip().split()))
+
+for i in storage:
+    if i in A:
+        count = count+1
+    if i in B:
+        count = count-1
+
+print(count)
